@@ -23,7 +23,7 @@ function eggcforum_admin_menu_option()
 }
 add_action('admin_menu', 'eggcforum_admin_menu_option');
 
-// FORM STRUCTURE
+// FORM PAGE STRUCTURE
 function eggcforum_scripts_page()
 {
     if (array_key_exists('eggcforum_update_scripts', $_POST)) {
@@ -56,6 +56,7 @@ function eggcforum_scripts_page()
     <?php
 }
 
+// DISPLAY HEADER SCRIPT IN PAGE SOURCE
 function eggcforum_display_header_scripts()
 {
     $eggcforum_header_scripts = get_option('eggcforum_header_scripts', '');
@@ -63,6 +64,7 @@ function eggcforum_display_header_scripts()
 }
 add_action('wp_head', 'eggcforum_display_header_scripts');
 
+// DISPLAY FOOTER SCRIPT IN PAGE SOURCE
 function eggcforum_display_footer_scripts()
 {
     $eggcforum_footer_scripts = get_option('eggcforum_footer_scripts', '');
@@ -70,6 +72,7 @@ function eggcforum_display_footer_scripts()
 }
 add_action('wp_footer', 'eggcforum_display_footer_scripts');
 
+// SHORT CODE FOR FORUM
 function eggcforum_form()
 {
     add_shortcode('eggcforumform', 'eggcforum_form');
